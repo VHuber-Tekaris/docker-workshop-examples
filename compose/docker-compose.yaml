@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  web:
+    restart: on-failure
+    build: ./quote-app
+    ports:
+      - '81-83:5000'
+    deploy: 
+      replicas: 3
+
+  nginx:
+    build: ./loadbalancer
+    ports:
+    - '80:80'
+    depends_on:
+    - web

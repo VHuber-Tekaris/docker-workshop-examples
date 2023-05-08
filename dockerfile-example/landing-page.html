@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doggo</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: center;
+            color: grey;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">Welcome to this simple nginx application!</div>
+    <p>Here is a random dog:</p>
+    <p>
+        <img id="doggo" style="width: 100%; max-width: 400px;" src="">
+    </p>
+</body>
+
+<script type="text/javascript">
+    const fetchDog = async function () {
+        const response = await fetch("https://dog.ceo/api/breeds/image/random");
+        const jsonData = await response.json();
+        const url = jsonData.message;
+        const image = document.getElementById("doggo");
+        image.src = url;
+    }
+    fetchDog()
+</script>
+
+</html>
