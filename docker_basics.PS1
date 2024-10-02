@@ -29,14 +29,11 @@ docker build -t custom-nginx .
 docker images
 docker run --rm --name custom-nginx-container -d -p 8080:80 custom-nginx
 
-# Funbox
-docker run --rm -it wernight/funbox asciiquarium
-docker run --rm -it wernight/funbox nyancat
-
 # Docker compose
 cd ..
 cd compose
 docker compose up --build
 
-# AI with docker compose:
-https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Setup
+# Funbox
+docker run --rm -it wernight/funbox asciiquarium
+docker run --rm -it wernight/funbox nyancat
