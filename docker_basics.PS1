@@ -30,10 +30,10 @@ docker build -t custom-nginx .
 docker images
 docker run --rm --name custom-nginx-container -d -p 8080:80 custom-nginx
 
-# Funbox images
-# docker run --rm -it wernight/funbox asciiquarium
-# docker run --rm -it wernight/funbox nyancat
-
 # Docker compose
 cd ..\compose
 docker compose up --build
+
+# Funbox
+# docker run --rm -it wernight/funbox asciiquarium
+# docker run --rm -it wernight/funbox nyancat
