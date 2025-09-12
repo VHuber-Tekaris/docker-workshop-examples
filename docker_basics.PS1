@@ -16,11 +16,12 @@ docker rm basic-nginx
 docker run --rm --name basic-nginx -d -p 8080:80 nginx
 docker ps 
 
-# Exec into running container with bash, inspedct files
+# Exec into running container with bash, inspect files
 docker exec -it basic-nginx /bin/bash
 cd /usr/share/nginx/html
 cat index.html
 exit
+docker rm -f basic-nginx
 
 # Create custom image with dockerfile
 cd dockerfile-example
@@ -29,14 +30,10 @@ docker build -t custom-nginx .
 docker images
 docker run --rm --name custom-nginx-container -d -p 8080:80 custom-nginx
 
-# Funbox
-docker run --rm -it wernight/funbox asciiquarium
-docker run --rm -it wernight/funbox nyancat
+# Funbox images
+# docker run --rm -it wernight/funbox asciiquarium
+# docker run --rm -it wernight/funbox nyancat
 
 # Docker compose
-cd ..
-cd compose
+cd ..\compose
 docker compose up --build
-
-# AI with docker compose:
-https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Setup
